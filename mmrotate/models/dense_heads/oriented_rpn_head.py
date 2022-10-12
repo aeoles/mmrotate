@@ -44,11 +44,11 @@ class OrientedRPNHead(RotatedRPNHead):
         #             for param in m.parameters():
         #                 param.requires_grad = False
 
-        for i in range(1, self.frozen_stages + 1):
-            m = getattr(self, f'rpn_conv')
-            m.eval()
-            for param in m.parameters():
-                param.requires_grad = False
+#         for i in range(1, self.frozen_stages + 1):
+#             m = getattr(self, f'rpn_conv')
+#             m.eval()
+#             for param in m.parameters():
+#                 param.requires_grad = False
         for i in range(1, self.frozen_stages + 1):
             m = getattr(self, f'rpn_cls')
             m.eval()
